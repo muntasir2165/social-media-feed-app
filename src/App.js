@@ -1,25 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import InputForm from "./components/InputForm";
+
+
 class App extends Component {
+  // Setting the component's initial state
+  state = {
+    feed: []
+  };
+
+  handleNewPost = post => {
+    console.log("Inside handleNewPost in App.js!!!");
+    console.log(post);
+    this.setState( currentState => ({
+      feed: [...currentState.feed, [post.postPicUrl, post.postTitle]]
+    }));
+  };
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <h1>Social Media Feed App</h1>
+        <InputForm newPostHandler={this.handleNewPost}/>
       </div>
     );
   }
