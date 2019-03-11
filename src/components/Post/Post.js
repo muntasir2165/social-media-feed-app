@@ -2,7 +2,12 @@ import React from "react";
 import "./Post.css";
 
 const Post = (props) => (
-  <img className={"col-md-3 col-sm-4 col-xs-12 pb-4 imageBlock rounded-circle " + (props.gameStatus == "2" ? " gameLost" : (props.gameStatus == "1" ? " gameWon" : ""))} src={process.env.PUBLIC_URL + "/images/" + props.imageFileName} alt={props.alt} height={props.imageBlockHeight} width={props.imageBlockWidth} onClick={props.clickHandler} />
+	<div className="row">
+			<div className="col-md-8 offset-md-2 offset-md-right-2 p-2">
+			<h2>{props.postTitle}</h2>
+	  	<img src={props.postPicUrl} alt={props.postTitle} />
+	  </div>
+  </div>
 );
 
 export default Post;

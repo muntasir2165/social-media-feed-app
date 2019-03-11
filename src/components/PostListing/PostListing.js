@@ -4,11 +4,9 @@ import Post from "../Post";
 
 const PostListing = (props) => (
 	<div className="container">
-		<div className="row">
-	    {props.imageFileNames.map((imageFileName, index) => {
-	      return <ImageBlock key={index} imageFileName={imageFileName} alt={imageFileName} clickHandler={props.clickHandler} gameStatus={props.gameStatus} />
+	    {props.posts.map((post, index) => {
+	      return <Post postPicUrl={post[0]} postTitle={post[1]} key={index}/>
 	    })}
-	  </div>
   </div>
 );
 
