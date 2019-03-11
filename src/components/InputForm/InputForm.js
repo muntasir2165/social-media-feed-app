@@ -34,16 +34,21 @@ class InputForm extends Component {
 
   render() {
     return (
-      <div className="row">
+      <div className="row p-2">
         <div className="col-md-8 offset-md-2 offset-md-right-2">
           <form>
             <div className="form-group">
               <input value={this.state.postPicUrl} name="postPicUrl" onChange={this.handleInputChange} type="text" className="form-control" placeholder="Enter URL" />
             </div>
-            <div className="form-group">
-              <input value={this.state.postTitle} name="postTitle" onChange={this.handleInputChange} type="text" className="form-control" placeholder="Title" />
+            <div className="form-group row">
+              <div className="col-md-10">
+                <input value={this.state.postTitle} name="postTitle" onChange={this.handleInputChange} type="text" className="form-control" placeholder="Title" />
+              </div>
+              <div className="col-md-2">
+                <button onClick={this.handleFormSubmit} className="btn btn-primary">New Post</button>
+              </div>
             </div>
-            <button onClick={this.handleFormSubmit} className="btn btn-primary">New Post</button>
+
           </form>
         </div>
       </div>

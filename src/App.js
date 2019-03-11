@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import InputForm from "./components/InputForm";
 import PostListing from "./components/PostListing";
-import Footer from "./components/Footer";
 
 class App extends Component {
   // Setting the component's initial state
@@ -18,11 +17,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="container">
         <h1>Social Media Feed App</h1>
         <InputForm newPostHandler={this.handleNewPost}/>
         <PostListing posts={this.state.feed} />
-        <Footer />
       </div>
     );
   }
