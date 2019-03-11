@@ -1,5 +1,5 @@
 # Social Media Feed App
-A React app that allows the user make social media posts that include a title and an image URL
+A React app that allows the user to make social media posts that include a title and an image URL
 
 ## App Link
 
